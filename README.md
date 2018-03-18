@@ -1,0 +1,52 @@
+# FTSearchController
+![Build Pass](https://img.shields.io/travis/rust-lang/rust.svg)
+![Language](https://img.shields.io/badge/swift-4.0-orange.svg)
+
+An easy-to-use UISearchController. iOS11 style compatible with iOS10.  
+
+## Demo
+Dwonload and check out the demo project.
+## Installation
+### Manual
+Download `.swift` files in _Source_.
+## Usage
+**Setup TextField**  
+
+- `textFieldBackgroundColor`: Backgournd color of `textField` in `searchControler's searchBar`
+- `textFieldCornerRadius`: corner radius of the `textField`
+- `textFieldTextColor`: text color of `textField`
+- `textFieldFont`: text font of `textField`
+- `cursorColor`: Set cursor color by changing the tint color of the searchBar
+- `attributedPlaceholder`: set up the `attributedPlaceholder` of the `textField`
+- `leftIconColor`: the color of the magnifying lends in the `textField`
+- `rightIconColor`: the clear button in the `textField`  
+**Setup CancelButton**  
+- `customizeCancelButton`: (UIButton)->(): a clourse help you setup the cancel button
+- `cencelButtonAttributedTitle`: This attribute only valid when customizeCancelButton block is nil
+- `cancelButtonColor`: This attribute only valid when `customizeCancelButton` block and `cencelButtonAttributedTitle ` is nil 
+- `cancelButtonTitle`: This attribute only valid when `customizeCancelButton` block and `cencelButtonAttributedTitle` is nil
+
+**Setup Navigtionbar**  
+- `hideBorderLines`: wether hide the upper and lower border line of the `searchBar`
+- `barBackgroundColor`: set the search bar background, only working on iOS 11 lower
+- `universalBackgoundColor`: set the search bar and the `navigationBar` background. This attribute will also set `searchBar.isTranslucent` to `false` on iOS 11 lower
+- `hideNavitionBarBottomLine`: wether hide the bottom line of the `navigationBar`
+
+### 3. UISearchBar Delegate
+The delegate methods of `UISearchBar` has been convert to closures like below  
+
+
+    typealias EmptySearchBarHandler = (UISearchBar)->()
+    typealias BoolSearchBarHandler = (UISearchBar)->(Bool)
+    
+    public var searchButtonClickHandler: EmptySearchBarHandler?
+    public var searchBarShouldBeginEditingHandler: BoolSearchBarHandler?
+    public var searchBarShouldEndEditingHandler: BoolSearchBarHandler?
+    public var searchBarCancelButtonClickHandler: EmptySearchBarHandler?
+    
+    public var searchTextDidChange: ((UISearchBar, String)->())?
+    public var searchTextShouldChangeInRange: ((UISearchBar, NSRange, String)->(Bool))?
+    
+### 3. FTSearchControllerDataProvider
+This protocol simply inherits `UITableViewDelegate`, `UITableViewDataSource`, `UISearchResultUpdating`.
+

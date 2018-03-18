@@ -89,14 +89,7 @@ class FTSearchController: UIViewController {
             return searchController.searchBar.frame.height
         }
     }
-    
-    
-    /// 搜索条透明层 cornerRadius 10.0
-    open var textFieldBlurLayer: UIView? {
-        get {
-            return searchFieldBackgroudView?.subviews.first
-        }
-    }
+  
     // MARK: - 文本输入框
     /// 文本框背景色
     open var textFieldBackgroundColor: UIColor? {
@@ -197,8 +190,12 @@ class FTSearchController: UIViewController {
     /// iOS10 搜索条背景色, 如果导航栏是有模糊特效的颜色会不一样。 iOS11 的背景色通过导航栏的背景色来设置
     open var barBackgroundColor: UIColor? {
         willSet {
-            searchBar.isTranslucent = false
-            searchBar.barTintColor = newValue
+            if #available(iOS 11.0, *) {
+            } else {
+                searchBar.isTranslucent = false
+                searchBar.barTintColor = newValue
+            }
+            
         }
     }
     /// 导航栏和搜索条背景色，关闭导航栏模糊特效
