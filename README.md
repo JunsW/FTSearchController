@@ -10,7 +10,7 @@ Dwonload and check out the demo project.
 ![iOS 11](https://github.com/JunsW/FTSearchController/blob/master/Pics/DemoiOS11_1.png)  
 ![iOS 11](https://github.com/JunsW/FTSearchController/blob/master/Pics/DemoiOS11_2.png)  
 **iOS 11 lower**  
-![Compatible](https://github.com/JunsW/FTSearchController/blob/master/Pics/DemoiOS10.png)
+![Compatible](https://github.com/JunsW/FTSearchController/blob/master/Pics/DemoiOS10.png)  
 (I know the demo color pattern is kind of urgly, forgive me :D. I will improve it soon)
 ## Installation
 ### Manual
