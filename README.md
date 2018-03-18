@@ -5,11 +5,20 @@
 An easy-to-use UISearchController. iOS11 style compatible with iOS10.  
 
 ## Demo
-Dwonload and check out the demo project.
+Dwonload and check out the demo project.  
+![iOS 11](https://github.com/JunsW/FTSearchController/blob/master/Pics/DemoiOS11.png)  
+![iOS 11](https://github.com/JunsW/FTSearchController/blob/master/Pics/DemoiOS11_2.png)  
+![Compatible](https://github.com/JunsW/FTSearchController/blob/master/Pics/DemoiOS10.png)
 ## Installation
 ### Manual
 Download `.swift` files in _Source_.
 ## Usage
+`class ViewController: FTSearchController`  
+Just inherit the `FTSearchController`.  
+`FTSearchController` already provide a `UITableView` for you to show reuslt.  
+Just implement the all in one protocol `FTSearchControllerDataProvider `
+
+###1. Customize UI
 **Setup TextField**  
 
 - `textFieldBackgroundColor`: Backgournd color of `textField` in `searchControler's searchBar`
@@ -20,19 +29,22 @@ Download `.swift` files in _Source_.
 - `attributedPlaceholder`: set up the `attributedPlaceholder` of the `textField`
 - `leftIconColor`: the color of the magnifying lends in the `textField`
 - `rightIconColor`: the clear button in the `textField`  
+  
 **Setup CancelButton**  
+
 - `customizeCancelButton`: (UIButton)->(): a clourse help you setup the cancel button
 - `cencelButtonAttributedTitle`: This attribute only valid when customizeCancelButton block is nil
 - `cancelButtonColor`: This attribute only valid when `customizeCancelButton` block and `cencelButtonAttributedTitle ` is nil 
 - `cancelButtonTitle`: This attribute only valid when `customizeCancelButton` block and `cencelButtonAttributedTitle` is nil
 
-**Setup Navigtionbar**  
+**Setup Bar**    
+
 - `hideBorderLines`: wether hide the upper and lower border line of the `searchBar`
 - `barBackgroundColor`: set the search bar background, only working on iOS 11 lower
 - `universalBackgoundColor`: set the search bar and the `navigationBar` background. This attribute will also set `searchBar.isTranslucent` to `false` on iOS 11 lower
 - `hideNavitionBarBottomLine`: wether hide the bottom line of the `navigationBar`
 
-### 3. UISearchBar Delegate
+### 2. UISearchBar Delegate
 The delegate methods of `UISearchBar` has been convert to closures like below  
 
 
