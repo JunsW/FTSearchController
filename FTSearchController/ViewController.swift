@@ -35,17 +35,17 @@ class ViewController: FTSearchController {
         let backgroundColor = UIColor(hex: 0xffffd9)
         let tintColor = UIColor(hex: 0x603125)
         let blue = UIColor(hex: 0x2D5AE4)
-        textFieldTextColor = .yellow
+        textFieldTextColor = UIColor.white
         textFieldBackgroundColor = .red
         
         attributedPlaceholder = NSAttributedString(string: "请输入内容", attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
 //        navigationController?.navigationBar.barTintColor = .blue
 //        barBackgroundColor = .blue
         universalBackgoundColor = backgroundColor
-        
+        showDebugInfo = false
         cursorAndCancelButtonColor = tintColor
-        leftIconColor = .white
-        rightIconColor = .white
+        leftIconColor = .yellow
+        rightIconColor = .orange
         cancelButtonTitle = "好的"
         hideBorderLines = true
         cencelButtonAttributedTitle = NSAttributedString(string: "确定", attributes: [NSAttributedStringKey.foregroundColor : blue, NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18)])
